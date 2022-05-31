@@ -16,7 +16,8 @@ public class Persona {
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	private String idPersona;
-    private String username;
+    private String nombre;
+    private String apellido;
     private String mail;
     private String telefono;
     private String linkedin;
