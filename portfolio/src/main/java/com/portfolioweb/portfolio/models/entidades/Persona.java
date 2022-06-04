@@ -15,9 +15,10 @@ public class Persona {
     @Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	private String idPersona;
+	private String id;
     private String nombre;
     private String apellido;
+    private String documento;
     private String mail;
     private String telefono;
     private String linkedin;

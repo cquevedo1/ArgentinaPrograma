@@ -16,7 +16,7 @@ public class ExperienciaLaboral {
     @Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	private String idExperiencia;
+	private String id;
     private String nombre;
     private String descripcion;
     private Date fechaInicio;

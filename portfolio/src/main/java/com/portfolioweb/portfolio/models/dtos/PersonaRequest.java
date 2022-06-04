@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class PersonaDTO {
+public class PersonaRequest {
     @NotBlank
     private String nombre;
     @NotBlank
@@ -13,4 +13,5 @@ public class PersonaDTO {
     private String mail;
     private String telefono;
     private String linkedin;
+    private String documento;
 }
