@@ -21,7 +21,7 @@ import com.portfolioweb.portfolio.services.EstudiosServicio;
 @RestController
 @RequestMapping("/estudios")
 @CrossOrigin(origins = "*")
-public class EstudiosController {
+public class EstudiosCursadosController {
     @Autowired
     EstudiosServicio estudiosServicio;
 
