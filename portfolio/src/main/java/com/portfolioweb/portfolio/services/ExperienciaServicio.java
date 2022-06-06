@@ -43,7 +43,7 @@ public class ExperienciaServicio {
 
     
     @Transactional
-    public void modificarEstudios(String id, ExperienciaRequest experienciaRequest){
+    public void modificarExperiencia(String id, ExperienciaRequest experienciaRequest){
 
         if(experienciaRepositorio.existsById(id)) {
             experienciaLaboral.setDescripcion(experienciaRequest.getDescripcion());
@@ -55,7 +55,7 @@ public class ExperienciaServicio {
     }
 
     @Transactional
-    public void borrarEstudios(String id){
+    public void borrarExperiencia(String id){
         if(experienciaRepositorio.existsById(id)) {
             experienciaRepositorio.deleteById(id);
         }
