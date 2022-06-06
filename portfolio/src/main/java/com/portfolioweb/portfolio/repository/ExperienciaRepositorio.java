@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExperienciaRepositorio extends JpaRepository<ExperienciaLaboral, String> {
-    @Query("SELECT p FROM Persona p WHERE p.id = :id")
+    @Query("SELECT e FROM ExperienciaLaboral e WHERE e.id = :id")
     public ExperienciaLaboral buscarPorID(@Param("id")String id);
 }
