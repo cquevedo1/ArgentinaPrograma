@@ -6,12 +6,13 @@ import java.util.NoSuchElementException;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.portfolioweb.portfolio.models.dtos.EstudiosRequest;
 import com.portfolioweb.portfolio.models.entidades.EstudiosCursados;
 import com.portfolioweb.portfolio.repository.EstudiosRepositorio;
 
-
+@Service
 public class EstudiosServicio {
     @Autowired
     EstudiosRepositorio estudiosRepositorio;

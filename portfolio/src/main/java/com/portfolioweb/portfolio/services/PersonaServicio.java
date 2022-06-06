@@ -5,12 +5,14 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.portfolioweb.portfolio.exceptions.DocumentAlreadyExistException;
 import com.portfolioweb.portfolio.models.dtos.PersonaRequest;
 import com.portfolioweb.portfolio.models.entidades.Persona;
 import com.portfolioweb.portfolio.repository.PersonaRepositorio;
 
+@Service
 public class PersonaServicio {
     @Autowired
     PersonaRepositorio personaRepositorio;
