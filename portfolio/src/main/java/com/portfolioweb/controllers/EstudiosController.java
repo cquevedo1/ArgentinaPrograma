@@ -46,11 +46,11 @@ public class EstudiosController {
         }
     }
 
-    // @DeleteMapping("/borrar/{id}")
-    // public ResponseEntity<?> borrarEstudios(@PathVariable("id") String id){
-    //     if (!estudiosServicio.existeId(id))
-    //         return new ResponseEntity<>("Id No Existe", HttpStatus.NOT_FOUND);
-    //     estudiosServicio.borrarEstudios(id);
-    //     return new ResponseEntity<>("Estudios Borrados", HttpStatus.OK);
-    // }
+    @DeleteMapping("/borrar/{id}")
+    public ResponseEntity<?> borrarEstudios(@PathVariable("id") String id){
+        if (!estudiosServicio.existeId(id))
+            return new ResponseEntity<>("Id No Existe", HttpStatus.NOT_FOUND);
+        estudiosServicio.borrarEstudios(id);
+        return new ResponseEntity<>("Estudios Borrados", HttpStatus.OK);
+    }
 }

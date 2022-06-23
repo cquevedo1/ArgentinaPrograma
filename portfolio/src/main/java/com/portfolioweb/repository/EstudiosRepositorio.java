@@ -10,8 +10,6 @@ import com.portfolioweb.models.entidades.Estudios;
 @Repository
 public interface EstudiosRepositorio extends JpaRepository<Estudios, String> {
     @Query("SELECT e FROM Estudios e WHERE e.id = :id")
-   public Estudios buscarPorID(@Param("id")String id);//{
-//         // TODO Auto-generated method stub
-//         return null;
+   public Estudios buscarPorID(@Param("id")String id);
 }
 
