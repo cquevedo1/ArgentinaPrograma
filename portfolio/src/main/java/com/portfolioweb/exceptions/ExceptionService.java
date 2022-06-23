@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.exceptions;
+package com.portfolioweb.exceptions;
 
 public class ExceptionService extends Exception {
     private static final long serialVersionUID = 1L;

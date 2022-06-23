@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.models.dtos;
+package com.portfolioweb.models.dtos;
 
 import javax.validation.constraints.NotBlank;
 

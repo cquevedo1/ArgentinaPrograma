@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.models.entidades;
+package com.portfolioweb.models.entidades;
 
 import java.sql.Date;
 
@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class EstudiosCursados {   
+public class Estudios {   
     @Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")

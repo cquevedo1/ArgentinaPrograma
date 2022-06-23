@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.services;
+package com.portfolioweb.services;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -8,17 +8,17 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.portfolioweb.portfolio.models.dtos.ExperienciaRequest;
-import com.portfolioweb.portfolio.models.entidades.ExperienciaLaboral;
-import com.portfolioweb.portfolio.repository.ExperienciaRepositorio;
+import com.portfolioweb.models.dtos.ExperienciaRequest;
+import com.portfolioweb.models.entidades.ExperienciaLaboral;
+import com.portfolioweb.repository.ExperienciaRepositorio;
 
 @Service
 public class ExperienciaServicio {
     @Autowired
-    ExperienciaRepositorio experienciaRepositorio;
+    private ExperienciaRepositorio experienciaRepositorio;
 
     @Autowired
-    ExperienciaLaboral experienciaLaboral;
+    private ExperienciaLaboral experienciaLaboral;
 
     public List<ExperienciaLaboral>listado(){
         return experienciaRepositorio.findAll();

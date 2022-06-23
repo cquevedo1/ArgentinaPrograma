@@ -1,9 +1,9 @@
-package com.portfolioweb.portfolio.exceptions;
+package com.portfolioweb.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.portfolioweb.portfolio.models.dtos.ErrorResponse;
+import com.portfolioweb.models.dtos.ErrorResponse;
 
 public class ExceptionCustomHandler {
 

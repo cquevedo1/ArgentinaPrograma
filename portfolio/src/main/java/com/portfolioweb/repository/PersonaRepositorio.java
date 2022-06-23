@@ -1,11 +1,11 @@
-package com.portfolioweb.portfolio.repository;
+package com.portfolioweb.repository;
 
-import com.portfolioweb.portfolio.models.entidades.Persona;
-
-import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import com.portfolioweb.models.entidades.Persona;
 
 @Repository
 public interface PersonaRepositorio extends JpaRepository<Persona, String> {

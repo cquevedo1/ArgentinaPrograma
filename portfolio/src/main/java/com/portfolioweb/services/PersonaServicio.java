@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.services;
+package com.portfolioweb.services;
 
 import java.util.List;
 
@@ -7,18 +7,18 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.portfolioweb.portfolio.exceptions.DocumentAlreadyExistException;
-import com.portfolioweb.portfolio.models.dtos.PersonaRequest;
-import com.portfolioweb.portfolio.models.entidades.Persona;
-import com.portfolioweb.portfolio.repository.PersonaRepositorio;
+import com.portfolioweb.exceptions.DocumentAlreadyExistException;
+import com.portfolioweb.models.dtos.PersonaRequest;
+import com.portfolioweb.models.entidades.Persona;
+import com.portfolioweb.repository.PersonaRepositorio;
 
 @Service
 public class PersonaServicio {
     @Autowired
-    PersonaRepositorio personaRepositorio;
+    private PersonaRepositorio personaRepositorio;
 
     @Autowired
-    Persona persona;
+    private Persona persona;
 
     public List<Persona> listado(){
         return personaRepositorio.findAll();

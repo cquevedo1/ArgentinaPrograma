@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.exceptions;
+package com.portfolioweb.exceptions;
 
 import java.text.MessageFormat;
 

@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.controllers;
+package com.portfolioweb.controllers;
 
 import java.util.NoSuchElementException;
 
@@ -14,32 +14,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portfolioweb.portfolio.exceptions.ExceptionCustomHandler;
-import com.portfolioweb.portfolio.models.dtos.PersonaRequest;
-import com.portfolioweb.portfolio.services.PersonaServicio;
+import com.portfolioweb.exceptions.ExceptionCustomHandler;
+import com.portfolioweb.models.dtos.ExperienciaRequest;
+import com.portfolioweb.services.ExperienciaServicio;
 
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/experienciaLaboral")
 @CrossOrigin(origins = "*")
-public class PersonaController {
+public class ExperienciaController {
+    
     @Autowired
-    PersonaServicio personaServicio;
+    private ExperienciaServicio experienciaServicio;
 
     @PostMapping("/crear")
-    public ResponseEntity<?> crearPersona(@RequestBody PersonaRequest personaRequest) {
+    public ResponseEntity<?> crearExperiencia(@RequestBody ExperienciaRequest experienciaRequest) {
   
         try {
-            personaServicio.crearPersona(personaRequest);
-            return new ResponseEntity<>("Persona creada Exitosamente", HttpStatus.OK);
+            experienciaServicio.agregarExperiencia(experienciaRequest);
+            return new ResponseEntity<>("Experiencia Laboral creada Exitosamente", HttpStatus.OK);
         } catch (Exception exception) {
             return ExceptionCustomHandler.throwError(HttpStatus.BAD_REQUEST, exception.getMessage());
         }
     }
 
     @PutMapping("/modificar/{id}")
-    public ResponseEntity<?> modificarDatos(@PathVariable("id") String id, @RequestBody PersonaRequest personaRequest) {
+    public ResponseEntity<?> modificarExperienciaLaboral(@PathVariable("id") String id, @RequestBody ExperienciaRequest experienciaRequest) {
         try {
-            personaServicio.modificarDatos(id, personaRequest);
+            experienciaServicio.modificarExperiencia(id, experienciaRequest);
             return new ResponseEntity<>("Datos modificados Exitosamente", HttpStatus.OK);
         } catch (NoSuchElementException exception) {
             return ExceptionCustomHandler.throwErrorNotFound(HttpStatus.NOT_FOUND, id);
@@ -47,12 +48,11 @@ public class PersonaController {
     }
 
     @DeleteMapping("/borrar/{id}")
-    public ResponseEntity<?> borrarPersona(@PathVariable("id") String id){
-        if (!personaServicio.existeId(id))
+    public ResponseEntity<?> borrarExperienciaLaboral(@PathVariable("id") String id){
+        if (!experienciaServicio.existeId(id)){
             return new ResponseEntity<>("Id No Existe", HttpStatus.NOT_FOUND);
-        personaServicio.borrarPersona(id);
-        return new ResponseEntity<>("Persona Borrada", HttpStatus.OK);
+        }
+        experienciaServicio.borrarExperiencia(id);
+        return new ResponseEntity<>("Estudios Borrados", HttpStatus.OK);
     }
-
 }
-

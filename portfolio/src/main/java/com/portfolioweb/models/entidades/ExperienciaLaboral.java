@@ -1,4 +1,4 @@
-package com.portfolioweb.portfolio.models.entidades;
+package com.portfolioweb.models.entidades;
 
 import java.sql.Date;
 
