@@ -17,8 +17,7 @@ public class PersonaServicio {
     @Autowired
     private PersonaRepositorio personaRepositorio;
 
-    @Autowired
-    private Persona persona;
+    private Persona persona = new Persona();
 
     public List<Persona> listado(){
         return personaRepositorio.findAll();

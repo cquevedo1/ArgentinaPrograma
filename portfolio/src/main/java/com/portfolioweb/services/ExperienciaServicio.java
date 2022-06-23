@@ -17,8 +17,7 @@ public class ExperienciaServicio {
     @Autowired
     private ExperienciaRepositorio experienciaRepositorio;
 
-    @Autowired
-    private ExperienciaLaboral experienciaLaboral;
+    private ExperienciaLaboral experienciaLaboral = new ExperienciaLaboral();
 
     public List<ExperienciaLaboral>listado(){
         return experienciaRepositorio.findAll();

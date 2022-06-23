@@ -23,7 +23,7 @@ public class Persona {
     private String mail;
     private String telefono;
     private String linkedin;
-    //@ManyToOne
+    @ManyToOne
     private Estudios estudios;
     @ManyToOne
     private ExperienciaLaboral experienciaLaboral;

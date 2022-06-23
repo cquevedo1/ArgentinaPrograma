@@ -17,8 +17,7 @@ public class EstudiosServicio {
     @Autowired
     private EstudiosRepositorio estudiosRepositorio;
 
-    @Autowired
-    private Estudios estudios;
+    private Estudios estudios = new Estudios();
 
     public List<Estudios> listado(){
         return estudiosRepositorio.findAll();
@@ -37,7 +36,7 @@ public class EstudiosServicio {
     }
 
     @Transactional
-    public void crearPersona(EstudiosRequest estudiosRequest) throws Exception{
+    public void crearEstudios(EstudiosRequest estudiosRequest) throws Exception{
         estudios.setDescripcion(estudiosRequest.getDescripcion());
         estudios.setFechaFin(estudiosRequest.getFechaFin());
         estudios.setFechaInicio(estudiosRequest.getFechaInicio());

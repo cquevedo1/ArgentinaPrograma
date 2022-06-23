@@ -25,16 +25,16 @@ public class EstudiosController {
     @Autowired
     private EstudiosServicio estudiosServicio;
 
-    // @PostMapping("/crear")
-    // public ResponseEntity<?> crearEstudios(@RequestBody EstudiosRequest estudiosRequest) {
+    @PostMapping("/crear")
+    public ResponseEntity<?> crearEstudios(@RequestBody EstudiosRequest estudiosRequest) {
   
-    //     try {
-    //         estudiosServicio.crearEstudios(estudiosRequest);
-    //         return new ResponseEntity<>("Estudios creados Exitosamente", HttpStatus.OK);
-    //     } catch (Exception exception) {
-    //         return ExceptionCustomHandler.throwError(HttpStatus.BAD_REQUEST, exception.getMessage());
-    //     }
-    // }
+        try {
+            estudiosServicio.crearEstudios(estudiosRequest);
+            return new ResponseEntity<>("Estudios creados Exitosamente", HttpStatus.OK);
+        } catch (Exception exception) {
+            return ExceptionCustomHandler.throwError(HttpStatus.BAD_REQUEST, exception.getMessage());
+        }
+    }
 
     @PutMapping("/modificar/{id}")
     public ResponseEntity<?> modificarDatos(@PathVariable("id") String id, @RequestBody EstudiosRequest estudiosRequest) {
